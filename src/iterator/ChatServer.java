@@ -1,4 +1,4 @@
-package memento.mediator;
+package iterator;
 
 import java.util.ArrayList;
 import java.util.HashMap;

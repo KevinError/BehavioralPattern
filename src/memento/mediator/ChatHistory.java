@@ -14,10 +14,6 @@ public class ChatHistory {
     }
 
     public Message getLastMessage() {
-        if (this.history.isEmpty()) {
-            return null;
-        } else {
-            return this.history.get(this.history.size() - 1);
-        }
+        return this.history.get(this.history.size() - 1);
     }
 }

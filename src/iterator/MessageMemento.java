@@ -1,4 +1,4 @@
-package memento.mediator;
+package iterator;
 
 public class MessageMemento {
     private String content;

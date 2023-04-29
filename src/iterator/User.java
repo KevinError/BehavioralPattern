@@ -1,10 +1,12 @@
-package memento.mediator;
+package iterator;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
-public class User {
+public class User implements Iterable<Message> {
     private String name;
     private ChatServer chatServer;
     private ChatHistory chatHistory;
@@ -49,5 +51,23 @@ public class User {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+    @Override
+    public Iterator<Message> iterator() {
+        return chatHistory.iterator(this);
     }
 }
