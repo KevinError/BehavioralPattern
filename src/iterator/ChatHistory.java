@@ -42,7 +42,7 @@ public class ChatHistory implements IterableByUser{
         public boolean hasNext() {
             while (currentIndex < history.size()) {
                 Message message = history.get(currentIndex);
-                if (message.getSender().equals(userToSearchWith) || message.getRecipients().contains(userToSearchWith)) {
+                if (message.getSender().equals(userToSearchWith) || message.getRecipients().equals(userToSearchWith)) {
                     return true;
                 }
                 currentIndex++;
